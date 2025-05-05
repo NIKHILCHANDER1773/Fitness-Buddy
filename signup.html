@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness Buddy - Sign Up or Login</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Segoe+UI:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <link rel="stylesheet" href="assets/css/signup.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <main class="main-content">
+      <div class="auth-container">
+        <div class="auth-tabs">
+          <div class="auth-tab active" id="signup-tab">Sign Up</div>
+          <div class="auth-tab" id="login-tab">Login</div>
+        </div>
+
+        <div class="form-container active" id="signup-form-container">
+          <form id="signup-form" novalidate>
+            <div class="form-group">
+              <label for="signup-name">Full Name</label>
+
+              <input
+                type="text"
+                id="signup-name"
+                class="form-control"
+                placeholder="Enter your full name"
+                required
+              />
+              <div class="error-message" id="signup-name-error"></div>
+            </div>
+            <div class="form-group">
+              <label for="signup-email">Email Address</label>
+
+              <input
+                type="email"
+                id="signup-email"
+                class="form-control"
+                placeholder="Enter your email"
+                required
+              />
+              <div class="error-message" id="signup-email-error"></div>
+            </div>
+            <div class="form-group">
+              <label for="signup-password">Password (min 6 characters)</label>
+              <div class="password-container">
+                <input
+                  type="password"
+                  id="signup-password"
+                  class="form-control"
+                  placeholder="Create a password"
+                  minlength="6"
+                  required
+                />
+                <span class="toggle-password" data-target="signup-password"
+                  >👁️</span
+                >
+              </div>
+              <div class="error-message" id="signup-password-error"></div>
+            </div>
+            <div class="form-group">
+              <label for="signup-confirm">Confirm Password</label>
+              <div class="password-container">
+                <input
+                  type="password"
+                  id="signup-confirm"
+                  class="form-control"
+                  placeholder="Confirm your password"
+                  minlength="6"
+                  required
+                />
+                <span class="toggle-password" data-target="signup-confirm"
+                  >👁️</span
+                >
+              </div>
+              <div class="error-message" id="signup-confirm-error"></div>
+            </div>
+            <div class="error-message" id="signup-form-error"></div>
+
+            <button
+              type="submit"
+              class="btn btn-primary auth-btn"
+              id="signup-btn"
+            >
+              Create Account
+              <div class="spinner"></div>
+            </button>
+          </form>
+          <div class="auth-divider"><span>OR</span></div>
+          <div class="social-auth">
+            <p class="text-muted text-center" style="width: 100%">
+              <small>Social login unavailable</small>
+            </p>
+          </div>
+          <div class="auth-alternative">
+            Already have an account? <a href="#" id="to-login">Login here</a>
+          </div>
+        </div>
+
+        <div class="form-container" id="login-form-container">
+          <form id="login-form" novalidate>
+            <div class="form-group">
+              <label for="login-email">Email Address</label>
+
+              <input
+                type="email"
+                id="login-email"
+                class="form-control"
+                placeholder="Enter your email"
+                required
+              />
+              <div class="error-message" id="login-email-error"></div>
+            </div>
+            <div class="form-group">
+              <label for="login-password">Password</label>
+              <div class="password-container">
+                <input
+                  type="password"
+                  id="login-password"
+                  class="form-control"
+                  placeholder="Enter your password"
+                  required
+                />
+                <span class="toggle-password" data-target="login-password"
+                  >👁️</span
+                >
+              </div>
+              <div class="error-message" id="login-password-error"></div>
+            </div>
+            <div class="error-message" id="login-form-error"></div>
+            <div class="forgot-password">
+              <a href="#" id="reset-password-link">Forgot password?</a>
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-primary auth-btn"
+              id="login-btn"
+            >
+              Login
+              <div class="spinner"></div>
+            </button>
+          </form>
+          <div class="auth-divider"><span>OR</span></div>
+          <div class="social-auth">
+            <p class="text-muted text-center" style="width: 100%">
+              <small>Social login unavailable</small>
+            </p>
+          </div>
+          <div class="auth-alternative">
+            Don't have an account? <a href="#" id="to-signup">Sign up here</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script type="module" src="assets/js/signup.js"></script>
+    <script type="module" src="assets/js/auth-guard.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
+  </body>
+</html>

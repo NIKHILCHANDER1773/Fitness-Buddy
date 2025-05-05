@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Feedback Form - FitnessBuddy</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <link rel="stylesheet" href="assets/css/feedback-form.css" />
+  </head>
+
+  <body>
+    <div id="navbar"></div>
+
+    <main class="container">
+      <div class="feedback-form-container">
+        <h1 class="text-center">Feedback</h1>
+        <hr class="title-separator" />
+        <p class="text-center text-muted">Please write your feedback below:</p>
+
+        <form id="feedback-form">
+          <fieldset class="form-group">
+            <legend class="form-legend">
+              How do you rate your overall experience?
+            </legend>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="experience" value="bad" required />
+                Bad
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="experience" value="average" /> Average
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="experience" value="good" /> Good
+              </label>
+            </div>
+            <div class="error-message" id="experience-error"></div>
+          </fieldset>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="feedback-name">Full Name*</label>
+
+              <input
+                type="text"
+                id="feedback-name"
+                class="form-control"
+                required
+                placeholder="Enter your name"
+              />
+              <div class="error-message" id="feedback-name-error"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="feedback-email">Email*</label>
+              <input
+                type="email"
+                id="feedback-email"
+                class="form-control"
+                required
+                placeholder="Enter your email"
+              />
+              <div class="error-message" id="feedback-email-error"></div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="feedback-age">Age (Optional)</label>
+              <input
+                type="number"
+                id="feedback-age"
+                class="form-control"
+                placeholder="Enter your age"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="feedback-phone">Phone (Optional)</label>
+              <input
+                type="tel"
+                id="feedback-phone"
+                class="form-control"
+                placeholder="Enter your number"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="feedback-message">Message*</label>
+
+            <textarea
+              id="feedback-message"
+              class="form-control"
+              required
+              placeholder="Write your message here"
+              rows="5"
+            ></textarea>
+            <div class="error-message" id="feedback-message-error"></div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-submit-feedback">
+            Submit Feedback
+          </button>
+        </form>
+      </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script type="module" src="assets/js/feedback.js"></script>
+    <script type="module" src="assets/js/auth-guard.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
+  </body>
+</html>

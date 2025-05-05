@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitnessBuddy - Dashboard</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="navbar"></div>
+
+    <main class="container dashboard-grid">
+
+        <div class="left-column">
+            <div class="card">
+                <h2><i class="fas fa-plus-circle icon-primary"></i> Log Workout</h2>
+                <form id="workout-form" novalidate>
+                    <div class="form-group">
+                        <label for="exercise-type">Exercise Type</label>
+                        <select class="form-control" id="exercise-type" required>
+                            <option value="">Select exercise type</option>
+                            <option value="Cardio">Cardio</option><option value="Strength Training">Strength Training</option> <option value="Yoga">Yoga</option> <option value="Swimming">Swimming</option> <option value="Cycling">Cycling</option> <option value="Running">Running</option> <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="duration">Duration (minutes)</label>
+                        <input type="number" class="form-control" id="duration" min="1" required placeholder="e.g., 30">
+                    </div>
+                    <div class="form-group">
+                        <label for="intensity">Intensity</label>
+                        <select class="form-control" id="intensity" required>
+                            <option value="">Select intensity</option>
+                            <option value="Light">Light</option> <option value="Moderate">Moderate</option> <option value="High">High</option> <option value="Extreme">Extreme</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Notes (Optional)</label>
+                        <textarea class="form-control" id="notes" rows="3" placeholder="How did it feel?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Log Workout</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-comments icon-primary"></i> Message Center</h2>
+                <div class="message-list-placeholder text-center text-muted">
+                    <p><i class="fas fa-inbox fa-2x" style="margin-bottom: var(--spacing-sm); opacity: 0.5;"></i></p>
+                    <p>View your conversations with buddies.</p>
+                    <a href="messages.html" class="btn btn-secondary btn-sm mt-1">Open Messages</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <div class="stats">
+                <div class="stat-card">
+                    <i class="fas fa-calendar-week icon"></i>
+                    <h3>This Week</h3>
+                    <div class="value" id="stat-weekly-value">--</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-stopwatch icon"></i>
+                    <h3>Weekly Time</h3>
+                    <div class="value" id="stat-minutes-value">-- min</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-fire-alt icon"></i>
+                    <h3>Est. Calories</h3>
+                    <div class="value" id="stat-calories-value">----</div>
+                </div>
+            </div>
+
+            <div class="card" id="goal-container">
+                <h2><i class="fas fa-bullseye icon-primary"></i> Current Goal</h2>
+                <div id="no-goal-message" style="display: none;" class="text-center text-muted">
+                     <p>No active goal found.</p>
+                     <button class="btn btn-secondary btn-sm">Set a Goal</button>
+                 </div>
+                <div id="goal-details">
+                    <h4 id="goal-description">Loading goal...</h4>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="goal-progress-fill" style="width: 0%;"></div>
+                        </div>
+                        <div class="progress-label">
+                            <span><span id="goal-progress-label-current">--</span> <span id="goal-progress-label-total">of -- completed</span></span>
+                            <span id="goal-progress-percent">--%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-history icon-primary"></i> Recent Activity</h2>
+                <ul class="activity-list">
+                    <li class="activity-item text-center text-muted">Loading activity...</li>
+                </ul>
+                <div class="text-center mt-1">
+                    <a href="workout.html" class="btn btn-link btn-sm">View Full History</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-map-marker-alt icon-primary"></i> Nearby Gyms</h2>
+                <div class="map-placeholder">
+                     <i class="fas fa-map-marked-alt map-icon-placeholder"></i>
+                     <p>Map Preview Unavailable</p>
+                     <a href="gym.html" class="btn btn-secondary btn-sm mt-1">Find Gyms</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script type="module" src="/assets/js/dashboard.js"></script>
+    <script type="module" src="/assets/js/auth-guard.js"></script>
+    <script type="module" src="/assets/js/main.js"></script>
+</body>
+</html>

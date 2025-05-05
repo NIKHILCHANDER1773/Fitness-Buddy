@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness Buddy - Your Personal Fitness Companion</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <section class="hero">
+      <video autoplay muted loop class="hero-bg">
+        <source src="assets/images/video1.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Level Up Your Workout—with a Buddy.</h1>
+        <p>Find someone to work out with.</p>
+      </div>
+    </section>
+
+    <section class="why-us">
+      <div class="section-title">
+        <h2>Why Choose Fitness Buddy?</h2>
+        <div class="underline"></div>
+        <p>
+          Hear from our community about how Fitness Buddy has transformed their
+          fitness journey.
+        </p>
+      </div>
+      <div class="testimonials">
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <img
+              src="assets/images/img1.png"
+              alt="User Avatar"
+              class="testimonial-avatar"
+            />
+            <div class="testimonial-info">
+              <h4>Sarah Johnson</h4>
+              <p>Fitness Enthusiast</p>
+            </div>
+          </div>
+          <p class="testimonial-text">
+            "Before I found Fitness Buddy, I was lost in my fitness journey. The
+            personalized workouts and community support have been game-changers.
+            I've lost 20 pounds and feel stronger than ever!"
+          </p>
+          <div class="testimonial-rating">★★★★★</div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <img
+              src="assets/images/img2.jpeg"
+              alt="User Avatar"
+              class="testimonial-avatar"
+            />
+            <div class="testimonial-info">
+              <h4>Michael Rodriguez</h4>
+              <p>Marathon Runner</p>
+            </div>
+          </div>
+          <p class="testimonial-text">
+            "As someone who's been running for years, I was skeptical about what
+            Fitness Buddy could offer. But the training plans and nutrition
+            advice helped me shave 15 minutes off my marathon time!"
+          </p>
+          <div class="testimonial-rating">★★★★★</div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <img
+              src="assets/images/img3.jpeg"
+              alt="User Avatar"
+              class="testimonial-avatar"
+            />
+            <div class="testimonial-info">
+              <h4>Emily Chen</h4>
+              <p>Yoga Instructor</p>
+            </div>
+          </div>
+          <p class="testimonial-text">
+            "Fitness isn't just about intense workouts. Fitness Buddy
+            understands the importance of balance, flexibility, and mindfulness.
+            Their holistic approach to wellness resonates with my philosophy as
+            a yoga instructor."
+          </p>
+          <div class="testimonial-rating">★★★★★</div>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const contactForm = document.querySelector(".contact-form");
+        if (contactForm) {
+          contactForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert(
+              "Thank you for your message! We will get back to you soon. (Demo)"
+            );
+            this.reset();
+          });
+        }
+      });
+    </script>
+
+    <script type="module" src="assets/js/auth-guard.js"></script>
+
+    <script type="module" src="assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Messages - FitnessBuddy</title>
+    <link href="assets/css/styles.css" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      body {
+        overflow: hidden; 
+      }
+      .messages-layout {
+        height: calc(
+          100vh - var(--navbar-height)
+        ); 
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <div class="messages-layout" id="messages-layout">
+      <div id="partner-list-container">
+        <h3>Find a New Buddy</h3>
+        <p>Connect with someone new!</p>
+        <div id="new-partner-options">
+          <p>Loading potential buddies...</p>
+        </div>
+      </div>
+
+      <div id="chat-container">
+        <div id="chat-header">
+          <h2 id="chat-with-header">Select a buddy</h2>
+          <button
+            id="toggle-partners-btn"
+            class="btn btn-secondary"
+            title="Toggle Buddy List"
+          >
+            <i class="fas fa-users"></i>
+          </button>
+        </div>
+
+        <div id="chat-messages"></div>
+
+        <div id="message-input-area">
+          <input
+            type="text"
+            id="message-input"
+            class="form-control"
+            placeholder="Type your message..."
+            disabled
+          />
+          <button id="send-button" class="btn btn-primary" disabled>
+            Send
+          </button>
+        </div>
+
+        <div id="starter-messages">
+          <button
+            class="starter-message-btn btn btn-secondary"
+            data-message="Hey! Just joined and looking for a fitness buddy."
+          >
+            Intro
+          </button>
+          <button
+            class="starter-message-btn btn btn-secondary"
+            data-message="Hey! I did 3 sets of 10 reps today, how about you?"
+          >
+            Workout Update
+          </button>
+          <button
+            class="starter-message-btn btn btn-secondary"
+            data-message="What are your main fitness goals right now?"
+          >
+            Goal Question
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer" style="display: none"></div>
+
+    <script type="module" src="assets/js/messaging.js"></script>
+    <script type="module" src="assets/js/auth-guard.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
+  </body>
+</html>

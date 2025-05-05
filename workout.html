@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitness Tracker - Workouts</title>
+
+    <link rel="stylesheet" href="assets/css/workout.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <div class="container">
+      <section class="workout-plans">
+        <h2>Workout Plans</h2>
+        <p>Choose a workout plan or create your own custom workout below.</p>
+
+        <div class="plans-container">
+          <div class="plan-card" data-plan="full-body">
+            <h3>Full Body Strength</h3>
+            <p>A comprehensive workout targeting all major muscle groups.</p>
+            <button class="btn btn-load-plan">Load Plan</button>
+          </div>
+
+          <div class="plan-card" data-plan="upper-body">
+            <h3>Upper Body Focus</h3>
+            <p>Concentrate on chest, back, shoulders, and arms.</p>
+            <button class="btn btn-load-plan">Load Plan</button>
+          </div>
+
+          <div class="plan-card" data-plan="lower-body">
+            <h3>Lower Body Power</h3>
+            <p>Build strength and power in legs and glutes.</p>
+            <button class="btn btn-load-plan">Load Plan</button>
+          </div>
+
+          <div class="plan-card" data-plan="core">
+            <h3>Core & Abs</h3>
+            <p>Strengthen your core muscles and develop abs.</p>
+            <button class="btn btn-load-plan">Load Plan</button>
+          </div>
+
+          <div class="plan-card" data-plan="hiit">
+            <h3>HIIT Cardio</h3>
+            <p>High-intensity interval training for maximum calorie burn.</p>
+            <button class="btn btn-load-plan">Load Plan</button>
+          </div>
+
+          <div class="plan-card" data-plan="custom">
+            <h3>Custom Workout</h3>
+            <p>Clear the list below and add exercises manually.</p>
+
+            <button class="btn btn-load-plan">Start Custom</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="workout-log">
+        <h2>Log Your Workout</h2>
+        <form id="workout-form">
+          <div class="log-form">
+            <div>
+              <div class="form-group">
+                <label for="workout-date">Date</label>
+                <input type="date" id="workout-date" required />
+              </div>
+
+              <div class="form-group">
+                <label for="workout-type">Workout Type</label>
+                <select id="workout-type" required>
+                  <option value="">Select a workout type</option>
+                  <option value="Full Body">Full Body</option>
+                  <option value="Upper Body">Upper Body</option>
+                  <option value="Lower Body">Lower Body</option>
+                  <option value="Core">Core</option>
+                  <option value="HIIT">HIIT</option>
+                  <option value="Cardio">Cardio</option>
+                  <option value="Custom">Custom</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="workout-duration">Duration (minutes)</label>
+                <input
+                  type="number"
+                  id="workout-duration"
+                  min="1"
+                  placeholder="e.g., 45"
+                  required
+                />
+              </div>
+            </div>
+
+            <div>
+              <div class="form-group">
+                <label for="workout-notes">Notes (Optional)</label>
+                <textarea
+                  id="workout-notes"
+                  rows="4"
+                  placeholder="How did the workout feel? Any achievements?"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <h3>Exercises</h3>
+
+          <button type="button" class="btn-add-exercise" id="add-exercise">
+            + Add Exercise Manually
+          </button>
+
+          <div id="exercise-list-container">
+            <ul class="exercise-list" id="exercise-list">
+              <li class="exercise-list-item">
+                <div class="exercise-details">Squats</div>
+                <div>3 sets × 12 reps</div>
+                <span class="remove-exercise"> ❌</span>
+              </li>
+              -->
+            </ul>
+          </div>
+
+          <button type="submit" class="btn-submit">Save Workout Log</button>
+        </form>
+      </section>
+
+      <section class="workout-history">
+        <h2>Your Workout History</h2>
+        <div class="history-container" id="history-container">
+          <div class="no-history" id="no-history" style="display: none">
+            No workout history yet. Start logging your workouts!
+          </div>
+
+          <div
+            class="loading-history"
+            style="text-align: center; padding: 20px"
+          >
+            <p>Loading history...</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div id="footer"></div>
+
+    <script type="module" src="assets/js/workout.js"></script>
+    <script type="module" src="assets/js/auth-guard.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
+  </body>
+</html>

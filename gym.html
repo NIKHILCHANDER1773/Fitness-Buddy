@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gym Locator - FitnessBuddy</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/gymlocator.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <style>
+      #map {
+        height: 450px;
+        background-color: #eee;
+      }
+      .leaflet-popup-content-wrapper {
+        border-radius: var(--border-radius-md, 8px);
+      }
+      .leaflet-popup-content {
+        font-family: var(--font-primary, sans-serif);
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+      .leaflet-popup-content strong {
+        font-weight: 600;
+        color: var(--dark-color, #333);
+        display: block;
+        margin-bottom: 4px;
+      }
+      .leaflet-popup-content p {
+        margin: 2px 0;
+        color: var(--gray-color, #666);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <main class="container">
+      <h1 class="page-title">Find Gyms Near You</h1>
+
+      <div class="search-container">
+        <div class="search-box">
+          <input
+            type="text"
+            id="location-input"
+            class="search-input form-control"
+            placeholder="Enter city or address"
+          />
+          <button id="search-btn" class="btn btn-primary search-btn">
+            Search
+          </button>
+          <button id="use-my-location" class="btn btn-secondary search-btn">
+            Use My Location
+          </button>
+        </div>
+        <div class="filter-options">
+          <div class="filter-option">
+            <input type="checkbox" id="open-now" />
+            <label for="open-now">Open Now</label>
+          </div>
+          <div class="filter-option">
+            <input type="checkbox" id="has-classes" />
+            <label for="has-classes">Has Classes</label>
+          </div>
+          <div class="filter-option">
+            <input type="checkbox" id="24-hours" />
+            <label for="24-hours">24/7 Access</label>
+          </div>
+          <div class="filter-option">
+            <label for="radius">Distance:</label
+            ><select id="radius" class="form-control">
+              <option value="1000">1 km</option>
+              <option value="2000">2 km</option>
+              <option value="5000" selected>5 km</option>
+              <option value="10000">10 km</option>
+              <option value="20000">20 km</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-container">
+        <div id="map"></div>
+      </div>
+
+      <div class="gym-list" id="gym-list">
+        <div class="loading">
+          <div class="spinner"></div>
+          <p>Loading gyms...</p>
+        </div>
+      </div>
+    </main>
+    <div id="footer"></div>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+
+    <script type="module" src="assets/js/gym-locator.js"></script>
+
+    <script type="module" src="assets/js/auth-guard.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
+  </body>
+</html>
