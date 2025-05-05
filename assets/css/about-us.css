@@ -1,0 +1,114 @@
+.about-section {
+  padding: var(--spacing-xl) 0;
+}
+
+.about-section .container {
+}
+
+.section-title {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-md);
+}
+
+.description {
+  font-size: 1.15rem;
+  max-width: 750px;
+  margin: 0 auto var(--spacing-xl);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.team-heading {
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-primary);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: var(--spacing-lg);
+  justify-content: center;
+}
+
+.team-card {
+  background: var(--bg-secondary);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--box-shadow-md);
+  border: 1px solid var(--border-color);
+  text-align: center;
+
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 0.6s ease, background-color var(--transition-speed) ease,
+    border-color var(--transition-speed) ease;
+}
+
+.team-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto var(--spacing-md);
+  object-fit: cover;
+  border: 3px solid var(--bg-tertiary);
+}
+
+.team-card h3 {
+  margin: var(--spacing-sm) 0 var(--spacing-xs);
+  color: var(--text-primary);
+  font-size: 1.2rem;
+}
+
+.team-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+.team-card.animate.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.mission-statement {
+  font-size: 1.1rem;
+  font-style: italic;
+  max-width: 700px;
+  margin: var(--spacing-lg) auto 0;
+  color: var(--text-secondary);
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+  }
+  .team-card img {
+    width: 100px;
+    height: 100px;
+  }
+  .description,
+  .mission-statement {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .about-section {
+    padding: var(--spacing-lg) 0;
+  }
+  .description {
+    margin-bottom: var(--spacing-lg);
+  }
+  .team-heading {
+    margin-top: var(--spacing-lg);
+  }
+}

@@ -1,0 +1,194 @@
+.main-content {
+  padding: var(--spacing-lg) var(--spacing-md);
+  align-items: flex-start;
+  padding-top: var(--spacing-xl);
+}
+@media (min-width: 768px) {
+  .main-content {
+    padding-top: calc(var(--spacing-xl) * 2);
+    align-items: center;
+  }
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 450px;
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  margin: 0 auto;
+}
+
+.auth-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.auth-tab {
+  flex: 1;
+  padding: var(--spacing-md);
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease,
+    color var(--transition-speed) ease,
+    border-color var(--transition-speed) ease;
+  color: var(--text-secondary);
+  border-bottom: 3px solid transparent;
+  background-color: var(--bg-primary);
+  font-size: 1rem;
+}
+.auth-tab:first-child {
+  border-top-left-radius: var(--border-radius-lg);
+}
+.auth-tab:last-child {
+  border-top-right-radius: var(--border-radius-lg);
+}
+
+.auth-tab.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+  background-color: var(--bg-secondary);
+}
+
+.auth-tab:not(.active):hover {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.form-container {
+  padding: var(--spacing-lg);
+}
+.form-container:not(.active) {
+  display: none;
+}
+
+.password-container {
+  position: relative;
+}
+
+.password-container .form-control {
+  padding-right: 45px;
+}
+.toggle-password {
+  position: absolute;
+  right: var(--spacing-md);
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--text-secondary);
+  user-select: none;
+  font-size: 1.3rem;
+  padding: var(--spacing-xs);
+  line-height: 1;
+}
+.toggle-password:hover {
+  color: var(--text-primary);
+}
+
+.auth-btn {
+  width: 100%;
+  margin-top: var(--spacing-sm);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-alternative {
+  margin-top: var(--spacing-lg);
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: var(--small-text-size);
+}
+.auth-alternative a {
+  font-weight: 600;
+}
+.auth-alternative a:hover {
+  text-decoration: underline;
+}
+
+.auth-divider {
+  margin: var(--spacing-lg) 0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: var(--small-text-size);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid var(--border-color);
+}
+.auth-divider span {
+  padding: 0 var(--spacing-md);
+}
+
+.social-auth {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+.social-auth-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  flex: 1;
+  font-size: 0.9rem;
+}
+.social-auth-btn svg,
+.social-auth-btn i {
+  width: 18px;
+  height: 18px;
+}
+
+.forgot-password {
+  text-align: right;
+  margin-bottom: var(--spacing-md);
+}
+.forgot-password a {
+  font-size: var(--small-text-size);
+}
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    max-width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: var(--bg-primary);
+  }
+  .auth-tab {
+    padding: var(--spacing-sm);
+    font-size: 0.9rem;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .form-container {
+    padding: var(--spacing-lg) var(--spacing-md);
+    background-color: var(--bg-secondary);
+    border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+  }
+  .auth-tab.active {
+    background-color: var(--bg-secondary);
+  }
+  .social-auth {
+    flex-direction: column;
+  }
+  .social-auth-btn {
+    width: 100%;
+  }
+}

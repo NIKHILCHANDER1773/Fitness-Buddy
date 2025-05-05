@@ -1,0 +1,97 @@
+<nav class="navbar">
+  <a href="/public/index.html" class="logo-container">
+    <img
+      src="/assets/images/logo.png"
+      alt="Fitness Buddy Logo"
+      class="logo-img"
+    />
+    <span class="logo-text">Fitness Buddy</span>
+  </a>
+
+  <div class="navbar-links-container" id="navbar-links-container">
+    <ul class="nav-links">
+      <li><a href="/public/index.html" data-nav-id="home">Home</a></li>
+      <li><a href="/public/blog.html" data-nav-id="blog">Blog</a></li>
+      <li><a href="/public/about_us.html" data-nav-id="about">About Us</a></li>
+      <li class="auth-required" style="display: none">
+        <a href="/public/Dash.html" data-nav-id="dashboard">Dashboard</a>
+      </li>
+      <li class="auth-required" style="display: none">
+        <a href="/public/workout.html" data-nav-id="workout">Workout</a>
+      </li>
+      <li class="auth-required" style="display: none">
+        <a href="/public/gym.html" data-nav-id="gym">Gym Locator</a>
+      </li>
+      <li class="auth-required" style="display: none">
+        <a href="/public/messages.html" data-nav-id="messages">Messages</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="nav-right">
+    <button id="theme-toggle-btn" title="Toggle theme">
+      <span class="theme-icon-light">🌙</span>
+      <span class="theme-icon-dark" style="display: none">☀️</span>
+    </button>
+
+    <div class="auth-guest" style="display: block">
+      <a href="/public/signup.html" class="btn btn-nav-action"
+        >Sign Up / Login</a
+      >
+    </div>
+    <div class="user-menu auth-required" style="display: none">
+      <span id="navbar-user-greeting">Welcome!</span>
+      <button class="btn btn-secondary" id="logout-btn">Logout</button>
+    </div>
+
+    <button
+      class="navbar-toggler"
+      id="navbar-toggler-btn"
+      type="button"
+      aria-label="Toggle navigation"
+      aria-expanded="false"
+    ></button>
+  </div>
+</nav>
+
+<script>
+  function setActiveNavLink() {
+    try {
+      requestAnimationFrame(() => {
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll(".navbar .nav-links a");
+        const homeRoute = window.AppConfig?.ROUTES?.HOME || "/";
+        const indexRoute =
+          window.AppConfig?.ROUTES?.INDEX || "/public/index.html";
+
+        navLinks.forEach((link) => {
+          const linkPath = link.getAttribute("href");
+          if (
+            linkPath === currentPath ||
+            (linkPath === homeRoute && currentPath === indexRoute) ||
+            (linkPath === indexRoute && currentPath === homeRoute)
+          ) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+      });
+    } catch (error) {
+      console.error("Error setting active nav link:", error);
+    }
+  }
+  if (typeof AppConfig !== "undefined") {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", setActiveNavLink);
+    } else {
+      setActiveNavLink();
+    }
+  } else {
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", setActiveNavLink);
+    } else {
+      setActiveNavLink();
+    }
+  }
+</script>
